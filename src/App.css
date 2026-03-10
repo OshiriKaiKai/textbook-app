@@ -2,18 +2,18 @@
    CSS変数 — Dark Galaxy テーマ
    ============================= */
 :root {
-  --bg-base: #070b14;
-  --bg-surface: #0d1117;
-  --bg-card: #111827;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --accent: #6366f1;
-  --accent-2: #8b5cf6;
-  --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
-  --border: rgba(255, 255, 255, 0.07);
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-  --shadow-accent: 0 0 24px rgba(99, 102, 241, 0.35);
+  --bg-base: #fdfbf7;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #3d3430;
+  --text-secondary: #736861;
+  --text-muted: #a89f9a;
+  --accent: #8e1728;
+  --accent-2: #c42b45;
+  --accent-gradient: linear-gradient(135deg, #8e1728, #c42b45);
+  --border: rgba(61, 52, 48, 0.1);
+  --shadow: 0 6px 20px rgba(61, 52, 48, 0.08);
+  --shadow-accent: 0 4px 16px rgba(142, 23, 40, 0.25);
 }
 
 /* =============================
@@ -78,21 +78,21 @@ body {
 }
 
 .btn-success {
-  background: linear-gradient(135deg, #00ff88, #00b4d8);
+  background: linear-gradient(135deg, #81c784, #aed581);
   color: #070b14;
 }
 .btn-success:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 24px rgba(129, 199, 132, 0.4);
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  background: linear-gradient(135deg, #e57373, #ef5350);
   color: #fff;
 }
 .btn-danger:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(255, 77, 109, 0.4);
+  box-shadow: 0 0 24px rgba(229, 115, 115, 0.4);
 }
 
 .btn-ghost {
@@ -101,19 +101,19 @@ body {
   border: 1px solid var(--border);
 }
 .btn-ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(61, 52, 48, 0.05);
   color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(61, 52, 48, 0.15);
 }
 
 .btn-outline {
   background: transparent;
   color: var(--accent);
-  border: 1px solid rgba(99, 102, 241, 0.4);
+  border: 1px solid rgba(142, 23, 40, 0.4);
 }
 .btn-outline:hover:not(:disabled) {
-  background: rgba(99, 102, 241, 0.08);
-  box-shadow: 0 0 16px rgba(99, 102, 241, 0.2);
+  background: rgba(142, 23, 40, 0.08);
+  box-shadow: 0 0 16px rgba(142, 23, 40, 0.2);
 }
 
 /* =============================
@@ -137,7 +137,7 @@ body {
 .input-field {
   width: 100%;
   padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(61, 52, 48, 0.04);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-primary);
@@ -148,9 +148,9 @@ body {
 }
 
 .input-field:focus {
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.12);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(142, 23, 40, 0.5);
+  box-shadow: 0 0 12px rgba(142, 23, 40, 0.12);
+  background: rgba(61, 52, 48, 0.07);
 }
 
 .input-field::placeholder {
@@ -185,8 +185,8 @@ textarea.input-field {
 .search-input {
   width: 100%;
   padding: 12px 14px 12px 42px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(61, 52, 48, 0.05);
+  border: 1px solid rgba(142, 23, 40, 0.2);
   border-radius: 12px;
   color: var(--text-primary);
   font-size: 1rem;
@@ -196,9 +196,9 @@ textarea.input-field {
 }
 
 .search-input:focus {
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.12);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(142, 23, 40, 0.5);
+  box-shadow: 0 0 20px rgba(142, 23, 40, 0.12);
+  background: rgba(61, 52, 48, 0.07);
 }
 
 .search-input::placeholder {
@@ -214,8 +214,8 @@ textarea.input-field {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 20%, rgba(142, 23, 40, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(196, 43, 69, 0.1) 0%, transparent 55%),
     var(--bg-base);
   padding: 24px;
 }
@@ -270,12 +270,12 @@ textarea.input-field {
 }
 
 .auth-error {
-  background: rgba(255, 77, 109, 0.12);
-  border: 1px solid rgba(255, 77, 109, 0.3);
+  background: rgba(229, 115, 115, 0.12);
+  border: 1px solid rgba(229, 115, 115, 0.3);
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 0.85rem;
-  color: #ff8099;
+  color: #ef5350;
   margin-bottom: 12px;
 }
 
@@ -301,8 +301,8 @@ textarea.input-field {
 .mock-hint {
   margin-top: 24px;
   padding: 12px;
-  background: rgba(99, 102, 241, 0.06);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: rgba(142, 23, 40, 0.06);
+  border: 1px solid rgba(142, 23, 40, 0.15);
   border-radius: 8px;
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -321,7 +321,7 @@ textarea.input-field {
   align-items: center;
   justify-content: space-between;
   padding: 14px 28px;
-  background: rgba(7, 11, 20, 0.92);
+  background: rgba(253, 251, 247, 0.92);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
   position: sticky;
@@ -356,8 +356,8 @@ textarea.input-field {
 .book-list-page {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 10% 10%, rgba(99, 102, 241, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 90%, rgba(139, 92, 246, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 10%, rgba(142, 23, 40, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 90%, rgba(196, 43, 69, 0.07) 0%, transparent 50%),
     var(--bg-base);
 }
 
@@ -431,7 +431,7 @@ textarea.input-field {
 
 .book-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2), var(--shadow);
+  box-shadow: 0 12px 40px rgba(142, 23, 40, 0.2), var(--shadow);
 }
 
 .book-card:hover::before {
@@ -448,7 +448,7 @@ textarea.input-field {
 }
 
 .book-card-icon-wrap {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  background: linear-gradient(135deg, rgba(142, 23, 40, 0.1), rgba(196, 43, 69, 0.1));
   padding: 24px;
   text-align: center;
   font-size: 2.5rem;
@@ -500,7 +500,7 @@ textarea.input-field {
 .profile-page {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 80% 0%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 0%, rgba(196, 43, 69, 0.12) 0%, transparent 50%),
     var(--bg-base);
 }
 
@@ -509,7 +509,7 @@ textarea.input-field {
   width: 100%;
   height: 50vh;
   min-height: 280px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  background: linear-gradient(135deg, rgba(142, 23, 40, 0.15), rgba(196, 43, 69, 0.15));
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -630,7 +630,7 @@ textarea.input-field {
 .form-page {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 30% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 30% 30%, rgba(196, 43, 69, 0.08) 0%, transparent 55%),
     var(--bg-base);
   padding: 32px 24px;
 }
@@ -684,14 +684,14 @@ textarea.input-field {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(99, 102, 241, 0.4);
+  border: 2px solid rgba(142, 23, 40, 0.4);
 }
 
 .photo-placeholder {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(61, 52, 48, 0.05);
   border: 2px dashed var(--border);
   display: flex;
   align-items: center;
@@ -702,7 +702,7 @@ textarea.input-field {
 .photo-upload-btn {
   display: inline-block;
   padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(61, 52, 48, 0.05);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-secondary);
@@ -712,7 +712,7 @@ textarea.input-field {
 }
 
 .photo-upload-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(61, 52, 48, 0.08);
   color: var(--text-primary);
 }
 
@@ -742,21 +742,21 @@ textarea.input-field {
 }
 
 .condition-btn.active-good {
-  background: rgba(0, 255, 136, 0.1);
-  border-color: #00ff88;
-  color: #00ff88;
+  background: rgba(129, 199, 132, 0.1);
+  border-color: #81c784;
+  color: #81c784;
 }
 
 .condition-btn.active-normal {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(142, 23, 40, 0.1);
   border-color: var(--accent);
   color: var(--accent);
 }
 
 .condition-btn.active-worn {
-  background: rgba(255, 77, 109, 0.1);
-  border-color: #ff4d6d;
-  color: #ff4d6d;
+  background: rgba(229, 115, 115, 0.1);
+  border-color: #e57373;
+  color: #e57373;
 }
 
 /* =============================
@@ -765,8 +765,8 @@ textarea.input-field {
 .book-detail-page {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 70% 10%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 90%, rgba(99, 102, 241, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 10%, rgba(196, 43, 69, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 90%, rgba(142, 23, 40, 0.07) 0%, transparent 50%),
     var(--bg-base);
   padding: 32px 24px;
 }
@@ -785,7 +785,7 @@ textarea.input-field {
 }
 
 .book-detail-hero {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  background: linear-gradient(135deg, rgba(142, 23, 40, 0.1), rgba(196, 43, 69, 0.1));
   border-radius: 16px;
   padding: 40px;
   text-align: center;
@@ -826,21 +826,21 @@ textarea.input-field {
 }
 
 .condition-good {
-  background: rgba(0, 255, 136, 0.12);
-  color: #00ff88;
-  border: 1px solid rgba(0, 255, 136, 0.3);
+  background: rgba(129, 199, 132, 0.12);
+  color: #81c784;
+  border: 1px solid rgba(129, 199, 132, 0.3);
 }
 
 .condition-normal {
-  background: rgba(99, 102, 241, 0.12);
+  background: rgba(142, 23, 40, 0.12);
   color: var(--accent);
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(142, 23, 40, 0.3);
 }
 
 .condition-worn {
-  background: rgba(255, 77, 109, 0.12);
-  color: #ff4d6d;
-  border: 1px solid rgba(255, 77, 109, 0.3);
+  background: rgba(229, 115, 115, 0.12);
+  color: #e57373;
+  border: 1px solid rgba(229, 115, 115, 0.3);
 }
 
 .book-detail-actions {
@@ -862,8 +862,8 @@ textarea.input-field {
 }
 
 .book-uploader-card:hover {
-  background: rgba(99, 102, 241, 0.06);
-  border-color: rgba(99, 102, 241, 0.2);
+  background: rgba(142, 23, 40, 0.06);
+  border-color: rgba(142, 23, 40, 0.2);
 }
 
 .book-uploader-name {
@@ -924,14 +924,14 @@ textarea.input-field {
   height: 90px;
   object-fit: cover;
   border-radius: 6px;
-  border: 2px solid rgba(99, 102, 241, 0.4);
+  border: 2px solid rgba(142, 23, 40, 0.4);
 }
 
 .book-cover-placeholder {
   width: 70px;
   height: 90px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(61, 52, 48, 0.05);
   border: 2px dashed var(--border);
   display: flex;
   align-items: center;
@@ -959,7 +959,7 @@ textarea.input-field {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse at 30% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 30% 30%, rgba(196, 43, 69, 0.1) 0%, transparent 55%),
     var(--bg-base);
   padding: 24px;
 }
@@ -1003,7 +1003,22 @@ textarea.input-field {
 
 .verify-resend-msg {
   font-size: 0.8rem;
-  color: #00ff88;
+  color: #81c784;
   margin-top: 4px;
   min-height: 20px;
+}
+
+/* =============================
+   LINE Button (UI UX PRO)
+   ============================= */
+.line-btn {
+  background: linear-gradient(135deg, #06C755, #00A642) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(6, 199, 85, 0.3);
+}
+.line-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(6, 199, 85, 0.45);
 }

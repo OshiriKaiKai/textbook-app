@@ -12,6 +12,11 @@ import { BookUploadPage } from './pages/BookUploadPage'
 import { BookDetailPage } from './pages/BookDetailPage'
 import { BookEditPage } from './pages/BookEditPage'
 
+import { useExams } from './hooks/useExams'
+import { ExamListPage } from './pages/ExamListPage'
+import { ExamUploadPage } from './pages/ExamUploadPage'
+import { ExamDetailPage } from './pages/ExamDetailPage'
+
 // ログイン済み かつ メール認証済みのみ通過できるガード
 const ProtectedRoute = ({ children }) => {
   const { currentUser } = useAuth()
@@ -23,6 +28,7 @@ const ProtectedRoute = ({ children }) => {
 const AppRoutes = () => {
   const { currentUser } = useAuth()
   const bookMethods = useBooks()
+  const examMethods = useExams()
   const profileMethods = useProfiles()
 
   // ログイン済みでメール未認証 → /verify-email へ
@@ -99,6 +105,30 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <BookDetailPage {...bookMethods} {...profileMethods} />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/exams"
+        element={
+          <ProtectedRoute>
+            <ExamListPage {...examMethods} />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/exams/upload"
+        element={
+          <ProtectedRoute>
+            <ExamUploadPage addExam={examMethods.addExam} />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/exams/:id"
+        element={
+          <ProtectedRoute>
+            <ExamDetailPage {...examMethods} {...profileMethods} />
           </ProtectedRoute>
         }
       />

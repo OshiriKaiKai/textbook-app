@@ -5,12 +5,12 @@ import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDOk-6XeZF9c3ncEjHHtiW9h0SxLe11dTE",
-  authDomain: "textbookexchanging.firebaseapp.com",
-  projectId: "textbookexchanging",
-  storageBucket: "textbookexchanging.firebasestorage.app",
-  messagingSenderId: "831439127181",
-  appId: "1:831439127181:web:61c6b7450bd9b7f95658c4"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 }
 
 const app = initializeApp(firebaseConfig)

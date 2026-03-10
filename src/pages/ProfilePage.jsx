@@ -40,10 +40,15 @@ export const ProfilePage = ({ getProfile, fetchProfile, getBooksByUser }) => {
 
   return (
     <div className="profile-page">
-      {/* ヒーロー画像エリア（画面上半分） */}
-      <div className="profile-hero">
+      {/* ヒーロー画像エリア（画面上半分を少しコンパクトにし、顔が見切れにくいようにする） */}
+      <div className="profile-hero" style={{ height: '40vh', minHeight: '220px' }}>
         {profile.photoURL ? (
-          <img src={profile.photoURL} alt={profile.name} className="profile-photo" />
+          <img 
+            src={profile.photoURL} 
+            alt={profile.name} 
+            className="profile-photo" 
+            style={{ objectFit: 'contain', width: '100%', height: '100%', background: 'var(--bg-card)' }} 
+          />
         ) : (
           <span className="profile-photo-placeholder">👤</span>
         )}
@@ -72,19 +77,6 @@ export const ProfilePage = ({ getProfile, fetchProfile, getBooksByUser }) => {
                 <span className="profile-meta-value">{profile.hobbies}</span>
               </div>
             )}
-            {profile.lineLink && (
-              <div className="profile-meta-row">
-                <span className="profile-meta-label">LINE</span>
-                <a
-                  href={profile.lineLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="profile-meta-link"
-                >
-                  {profile.lineLink}
-                </a>
-              </div>
-            )}
             {profile.bio && (
               <div className="profile-meta-row">
                 <span className="profile-meta-label">自己紹介</span>
@@ -92,6 +84,20 @@ export const ProfilePage = ({ getProfile, fetchProfile, getBooksByUser }) => {
               </div>
             )}
           </div>
+
+          {profile.lineLink && (
+            <div style={{ marginTop: '24px' }}>
+              <a
+                href={profile.lineLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn line-btn"
+                style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '1rem', background: '#06C755', color: '#fff' }}
+              >
+                LINEで連絡する
+              </a>
+            </div>
+          )}
         </div>
 
         {/* 出品した本一覧 */}

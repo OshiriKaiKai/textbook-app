@@ -26,8 +26,8 @@ export const LoginPage = () => {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-logo">📚</div>
-        <h1 className="auth-title">教科書交換</h1>
-        <p className="auth-subtitle">不要な教科書を交換しよう</p>
+        <h1 className="auth-title auth-title-tech" style={{ background: 'linear-gradient(135deg, #00f2fe 0%, #4facfe 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>一橋文庫</h1>
+        <p className="auth-subtitle">不要な教科書や過去問を共有しよう</p>
 
         {error && <div className="auth-error">{error}</div>}
 
