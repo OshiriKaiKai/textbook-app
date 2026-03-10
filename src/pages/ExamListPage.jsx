@@ -21,7 +21,7 @@ export const ExamListPage = ({ exams, examsLoading, examsError }) => {
   }
 
   return (
-    <div className="exam-list-page">
+    <div className="book-list-page">
       {/* ナビゲーションバー */}
       <nav className="navbar">
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
@@ -38,9 +38,9 @@ export const ExamListPage = ({ exams, examsLoading, examsError }) => {
         </div>
       </nav>
 
-      <div className="exam-list-content">
-        <div className="exam-list-header">
-          <h1 className="exam-list-title">過去問一覧</h1>
+      <div className="book-list-content">
+        <div className="book-list-header">
+          <h1 className="book-list-title">過去問一覧</h1>
           <Button variant="primary" onClick={() => navigate('/exams/upload')}>
             + 過去問を投稿
           </Button>
@@ -53,13 +53,13 @@ export const ExamListPage = ({ exams, examsLoading, examsError }) => {
         )}
 
         {examsLoading ? (
-          <div className="exam-empty">読み込み中...</div>
+          <div className="book-empty">読み込み中...</div>
         ) : filtered.length === 0 ? (
-          <div className="exam-empty">
-            {query ? `「${query}」に一致する本が見つかりません` : 'まだ投稿された過去問がありません'}
+          <div className="book-empty">
+            {query ? `「${query}」に一致する過去問が見つかりません` : 'まだ投稿された過去問がありません'}
           </div>
         ) : (
-          <div className="exam-grid">
+          <div className="book-grid">
             {filtered.map((exam, index) => (
               <ExamCard key={exam.id} exam={exam} index={index} />
             ))}

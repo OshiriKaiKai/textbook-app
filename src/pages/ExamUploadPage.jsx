@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { Button } from '../components/atoms/Button'
-import { Input } from '../components/atoms/Input'
+import { ExamUploadForm } from '../components/organisms/ExamUploadForm'
 import { storage } from '../firebase'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
@@ -19,38 +19,33 @@ export const ExamUploadPage = ({ addExam }) => {
   const navigate = useNavigate()
   const fileInputRef = useRef(null)
 
-  const [examName, setBookName] = useState('')
-  const [professorName, setAuthorName] = useState('')
-  const [department, setCondition] = useState('')
-  const [coverFile, setCoverFile] = useState(null)
-  const [coverPreview, setCoverPreview] = useState('')
+  const [examName, setExamName] = useState('')
+  const [examFile, setExamFile] = useState(null)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]
     if (!file) return
-    setCoverFile(file)
-    setCoverPreview(URL.createObjectURL(file))
+    setExamFile(file)
   }
 
   const handleSubmit = async () => {
     setSubmitting(true)
     setError('')
     try {
-      let coverURL = ''
-      if (coverFile) {
-        const storageRef = ref(storage, `exam-files/${currentUser.uid}/${Date.now()}`)
-        await uploadBytes(storageRef, coverFile)
-        coverURL = await getDownloadURL(storageRef)
+      let fileURL = ''
+      if (examFile) {
+        const storageRef = ref(storage, `exam-files/${currentUser.uid}/${Date.now()}_${examFile.name}`)
+        await uploadBytes(storageRef, examFile)
+        fileURL = await getDownloadURL(storageRef)
       }
       await addExam({
         examName: examName.trim(),
-        professorName: professorName.trim(),
-        department,
         uploaderId: currentUser.uid,
         uploaderName: currentUser.name || currentUser.email,
-        coverURL,
+        fileURL,
+        fileName: examFile ? examFile.name : ''
       })
       navigate('/exams')
     } catch (err) {
@@ -60,7 +55,7 @@ export const ExamUploadPage = ({ addExam }) => {
     }
   }
 
-  const canSubmit = examName.trim() && professorName.trim() && department
+  const canSubmit = examName.trim() && examFile
 
   return (
     <div className="form-page">
@@ -70,67 +65,18 @@ export const ExamUploadPage = ({ addExam }) => {
           <h1 className="form-title">過去問を投稿</h1>
         </div>
 
-        <div className="form-card">
+        <div className="form-card" style={{ padding: 0, background: 'transparent', boxShadow: 'none' }}>
           {error && <div className="auth-error">{error}</div>}
-
-          {/* 表紙画像 */}
-          <div className="input-group">
-            <label className="input-label">表紙画像（任意）</label>
-            <div className="photo-upload-area">
-              {coverPreview
-                ? <img src={coverPreview} alt="表紙プレビュー" className="exam-file-preview" />
-                : <div className="exam-file-placeholder">📚</div>
-              }
-              <label className="photo-upload-btn">
-                画像を選択
-                <input
-                  type="file"
-                  accept="image/*,.pdf"
-                  className="photo-file-input"
-                  ref={fileInputRef}
-                  onChange={handleFileChange}
-                />
-              </label>
-            </div>
-          </div>
-
-          <Input
-            label="本のタイトル *"
-            value={examName}
-            onChange={e => setBookName(e.target.value)}
-            placeholder="例: 数学ガール"
+          <ExamUploadForm
+            examName={examName}
+            setExamName={setExamName}
+            examFile={examFile}
+            handleFileChange={handleFileChange}
+            handleSubmit={handleSubmit}
+            submitting={submitting}
+            canSubmit={canSubmit}
+            onCancel={() => navigate('/exams')}
           />
-          <Input
-            label="教授名 *"
-            value={professorName}
-            onChange={e => setAuthorName(e.target.value)}
-            placeholder="例: 結城 浩"
-          />
-
-          <div className="input-group">
-            <label className="input-label">本の対象学部 *</label>
-            <div className="department-group">
-              {CONDITIONS.map(c => (
-                <button
-                  key={c}
-                  type="button"
-                  className={`department-btn ${department === c ? departmentActiveClass[c] : ''}`}
-                  onClick={() => setCondition(c)}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="form-actions">
-            <Button variant="primary" onClick={handleSubmit} disabled={!canSubmit || submitting}>
-              {submitting ? '出品中...' : '出品する'}
-            </Button>
-            <Button variant="ghost" onClick={() => navigate('/exams')}>
-              キャンセル
-            </Button>
-          </div>
         </div>
       </div>
     </div>

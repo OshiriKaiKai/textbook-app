@@ -3,11 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { Button } from '../components/atoms/Button'
 
-const departmentClass = {
-  '良好': 'department-general',
-  '学部専門': 'department-major',
-  'その他': 'department-other'
-}
+
 
 const formatDate = (isoStr) => {
   if (!isoStr) return ''
@@ -50,9 +46,9 @@ export const ExamDetailPage = ({ getExam, deleteExam, examsLoading }) => {
   }
 
   return (
-    <div className="exam-detail-page">
-      <div className="exam-detail-container">
-        <div className="exam-detail-header">
+    <div className="book-detail-page">
+      <div className="book-detail-container">
+        <div className="book-detail-header">
           <Button variant="ghost" onClick={() => navigate('/exams')}>← 一覧に戻る</Button>
           {canEdit && (
             <div style={{ display: 'flex', gap: '10px' }}>
@@ -66,32 +62,40 @@ export const ExamDetailPage = ({ getExam, deleteExam, examsLoading }) => {
           )}
         </div>
 
-        {/* 表紙エリア */}
-        {exam.coverURL
-          ? <img src={exam.coverURL} alt={exam.examName} className="exam-detail-cover" />
-          : <div className="exam-detail-hero">📚</div>
-        }
+        {/* ダウンロードエリア */}
+        <div className="book-detail-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', padding: '40px 20px' }}>
+          <h1 className="book-detail-title" style={{ marginBottom: '0' }}>{exam.examName}</h1>
+          
+          {(exam.fileURL || exam.coverURL) ? (
+            <a 
+              href={exam.fileURL || exam.coverURL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ textDecoration: 'none', width: '100%', maxWidth: '300px' }}
+              download={exam.fileName || '過去問ファイル'}
+            >
+              <Button variant="primary" style={{ width: '100%' }}>
+                <span style={{ fontSize: '1.2rem', marginRight: '8px' }}>📥</span>
+                ファイルをダウンロード
+              </Button>
+            </a>
+          ) : (
+            <div style={{ color: 'var(--text-secondary)' }}>ファイルがありません</div>
+          )}
 
-        {/* 書籍情報 */}
-        <div className="exam-detail-card">
-          <h1 className="exam-detail-title">{exam.examName}</h1>
-          <p className="exam-detail-author">{exam.professorName}</p>
-          <span className={`exam-detail-department ${departmentClass[exam.department] || ''}`}>
-            {exam.department}
-          </span>
-          <div className="exam-detail-date">出品日: {formatDate(exam.createdAt)}</div>
+          <div className="book-detail-date" style={{ marginTop: '20px' }}>出品日: {formatDate(exam.createdAt)}</div>
         </div>
 
         {/* 出品者情報 */}
         <div
-          className="exam-uploader-card"
+          className="book-uploader-card"
           onClick={() => navigate(`/profile/${exam.uploaderId}`)}
         >
           <div>
-            <p className="exam-uploader-label">出品者</p>
-            <p className="exam-uploader-name">{exam.uploaderName}</p>
+            <p className="book-uploader-label">出品者</p>
+            <p className="book-uploader-name">{exam.uploaderName}</p>
           </div>
-          <span className="exam-uploader-arrow">→</span>
+          <span className="book-uploader-arrow">→</span>
         </div>
       </div>
     </div>

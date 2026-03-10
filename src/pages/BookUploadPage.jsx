@@ -2,17 +2,11 @@ import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { Button } from '../components/atoms/Button'
-import { Input } from '../components/atoms/Input'
+import { BookUploadForm } from '../components/organisms/BookUploadForm'
 import { storage } from '../firebase'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
-const CONDITIONS = ['良好', '普通', '傷あり']
 
-const conditionActiveClass = {
-  '良好': 'active-good',
-  '普通': 'active-normal',
-  '傷あり': 'active-worn'
-}
 
 export const BookUploadPage = ({ addBook }) => {
   const { currentUser } = useAuth()
@@ -69,68 +63,22 @@ export const BookUploadPage = ({ addBook }) => {
           <Button variant="ghost" onClick={() => navigate('/books')}>← 戻る</Button>
           <h1 className="form-title">教科書を出品</h1>
         </div>
-
-        <div className="form-card">
+        <div className="form-card" style={{ padding: 0, background: 'transparent', boxShadow: 'none' }}>
           {error && <div className="auth-error">{error}</div>}
-
-          {/* 表紙画像 */}
-          <div className="input-group">
-            <label className="input-label">表紙画像（任意）</label>
-            <div className="photo-upload-area">
-              {coverPreview
-                ? <img src={coverPreview} alt="表紙プレビュー" className="book-cover-preview" />
-                : <div className="book-cover-placeholder">📚</div>
-              }
-              <label className="photo-upload-btn">
-                画像を選択
-                <input
-                  type="file"
-                  accept="image/*"
-                  className="photo-file-input"
-                  ref={fileInputRef}
-                  onChange={handleFileChange}
-                />
-              </label>
-            </div>
-          </div>
-
-          <Input
-            label="本のタイトル *"
-            value={bookName}
-            onChange={e => setBookName(e.target.value)}
-            placeholder="例: 数学ガール"
+          <BookUploadForm
+            bookName={bookName}
+            setBookName={setBookName}
+            authorName={authorName}
+            setAuthorName={setAuthorName}
+            condition={condition}
+            setCondition={setCondition}
+            coverPreview={coverPreview}
+            handleFileChange={handleFileChange}
+            handleSubmit={handleSubmit}
+            submitting={submitting}
+            canSubmit={canSubmit}
+            onCancel={() => navigate('/books')}
           />
-          <Input
-            label="著者名 *"
-            value={authorName}
-            onChange={e => setAuthorName(e.target.value)}
-            placeholder="例: 結城 浩"
-          />
-
-          <div className="input-group">
-            <label className="input-label">本の状態 *</label>
-            <div className="condition-group">
-              {CONDITIONS.map(c => (
-                <button
-                  key={c}
-                  type="button"
-                  className={`condition-btn ${condition === c ? conditionActiveClass[c] : ''}`}
-                  onClick={() => setCondition(c)}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="form-actions">
-            <Button variant="primary" onClick={handleSubmit} disabled={!canSubmit || submitting}>
-              {submitting ? '出品中...' : '出品する'}
-            </Button>
-            <Button variant="ghost" onClick={() => navigate('/books')}>
-              キャンセル
-            </Button>
-          </div>
         </div>
       </div>
     </div>
