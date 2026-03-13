@@ -34,8 +34,23 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
-  background: var(--bg-base);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #0B0405;
+  background-image: 
+    radial-gradient(ellipse at 80% 10%, rgba(168, 26, 47, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(229, 46, 77, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(50, 10, 20, 0.5) 0%, transparent 60%),
+    /* Star layers */
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 120px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 250px 200px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 300px 90px, #ffffff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 350px 350px, 350px 350px, 450px 450px, 350px 350px, 350px 350px, 450px 450px, 350px 350px;
+  background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -213,10 +228,7 @@ textarea.input-field {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(ellipse at 20% 20%, rgba(229, 46, 77, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 80%, rgba(168, 26, 47, 0.15) 0%, transparent 60%),
-    var(--bg-base);
+  background: transparent;
   padding: 24px;
 }
 
@@ -355,10 +367,7 @@ textarea.input-field {
    ============================= */
 .book-list-page {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 10% 10%, rgba(229, 46, 77, 0.1) 0%, transparent 60%),
-    radial-gradient(ellipse at 90% 90%, rgba(168, 26, 47, 0.1) 0%, transparent 60%),
-    var(--bg-base);
+  background: transparent;
 }
 
 .book-list-content {
@@ -455,8 +464,26 @@ textarea.input-field {
 }
 
 .book-card-body {
-  padding: 16px;
-  flex: 1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #0B0405;
+  background-image: 
+    radial-gradient(ellipse at 80% 10%, rgba(168, 26, 47, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(229, 46, 77, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(50, 10, 20, 0.5) 0%, transparent 60%),
+    /* Star layers */
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 120px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 250px 200px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 300px 90px, #ffffff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 350px 350px, 350px 350px, 450px 450px, 350px 350px, 350px 350px, 450px 450px, 350px 350px;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .book-card-title {
@@ -499,9 +526,7 @@ textarea.input-field {
    ============================= */
 .profile-page {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 80% 0%, rgba(196, 43, 69, 0.12) 0%, transparent 50%),
-    var(--bg-base);
+  background: transparent;
 }
 
 .profile-hero {
@@ -629,9 +654,7 @@ textarea.input-field {
    =============================*/
 .form-page {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 30% 30%, rgba(196, 43, 69, 0.08) 0%, transparent 55%),
-    var(--bg-base);
+  background: transparent;
   padding: 32px 24px;
 }
 
@@ -764,10 +787,7 @@ textarea.input-field {
    ============================= */
 .book-detail-page {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 70% 10%, rgba(196, 43, 69, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 90%, rgba(142, 23, 40, 0.07) 0%, transparent 50%),
-    var(--bg-base);
+  background: transparent;
   padding: 32px 24px;
 }
 
@@ -958,9 +978,7 @@ textarea.input-field {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(ellipse at 30% 30%, rgba(196, 43, 69, 0.1) 0%, transparent 55%),
-    var(--bg-base);
+  background: transparent;
   padding: 24px;
 }
 
