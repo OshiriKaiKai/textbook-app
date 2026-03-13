@@ -2,18 +2,18 @@
    CSS変数 — Dark Galaxy テーマ
    ============================= */
 :root {
-  --bg-base: #fdfbf7;
-  --bg-surface: #ffffff;
-  --bg-card: #ffffff;
-  --text-primary: #3d3430;
-  --text-secondary: #736861;
-  --text-muted: #a89f9a;
-  --accent: #8e1728;
-  --accent-2: #c42b45;
-  --accent-gradient: linear-gradient(135deg, #8e1728, #c42b45);
-  --border: rgba(61, 52, 48, 0.1);
-  --shadow: 0 6px 20px rgba(61, 52, 48, 0.08);
-  --shadow-accent: 0 4px 16px rgba(142, 23, 40, 0.25);
+  --bg-base: #0B0405;
+  --bg-surface: #1A0A0C;
+  --bg-card: rgba(30, 10, 15, 0.75);
+  --text-primary: #F8F4F5;
+  --text-secondary: #BBA6AA;
+  --text-muted: #82686D;
+  --accent: #D32F2F;
+  --accent-2: #FF4766;
+  --accent-gradient: linear-gradient(135deg, #A81A2F, #E52E4D);
+  --border: rgba(212, 30, 61, 0.25);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  --shadow-accent: 0 4px 24px rgba(229, 46, 77, 0.4);
 }
 
 /* =============================
@@ -101,7 +101,7 @@ body {
   border: 1px solid var(--border);
 }
 .btn-ghost:hover:not(:disabled) {
-  background: rgba(61, 52, 48, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
   border-color: rgba(61, 52, 48, 0.15);
 }
@@ -137,7 +137,7 @@ body {
 .input-field {
   width: 100%;
   padding: 10px 14px;
-  background: rgba(61, 52, 48, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-primary);
@@ -185,7 +185,7 @@ textarea.input-field {
 .search-input {
   width: 100%;
   padding: 12px 14px 12px 42px;
-  background: rgba(61, 52, 48, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(142, 23, 40, 0.2);
   border-radius: 12px;
   color: var(--text-primary);
@@ -214,8 +214,8 @@ textarea.input-field {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(142, 23, 40, 0.1) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 80%, rgba(196, 43, 69, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 20%, rgba(229, 46, 77, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(168, 26, 47, 0.15) 0%, transparent 60%),
     var(--bg-base);
   padding: 24px;
 }
@@ -223,8 +223,8 @@ textarea.input-field {
 .auth-container {
   width: 100%;
   max-width: 420px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   border-radius: 20px;
   padding: 40px 36px;
   backdrop-filter: blur(10px);
@@ -321,7 +321,7 @@ textarea.input-field {
   align-items: center;
   justify-content: space-between;
   padding: 14px 28px;
-  background: rgba(253, 251, 247, 0.92);
+  background: rgba(11, 4, 5, 0.85);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
   position: sticky;
@@ -356,8 +356,8 @@ textarea.input-field {
 .book-list-page {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at 10% 10%, rgba(142, 23, 40, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 90%, rgba(196, 43, 69, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 10%, rgba(229, 46, 77, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at 90% 90%, rgba(168, 26, 47, 0.1) 0%, transparent 60%),
     var(--bg-base);
 }
 
@@ -541,8 +541,8 @@ textarea.input-field {
 }
 
 .profile-info-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   border-radius: 16px;
   padding: 28px;
   margin-top: -40px;
@@ -657,8 +657,8 @@ textarea.input-field {
 }
 
 .form-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   border-radius: 16px;
   padding: 28px;
   box-shadow: var(--shadow);
@@ -691,7 +691,7 @@ textarea.input-field {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(61, 52, 48, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 2px dashed var(--border);
   display: flex;
   align-items: center;
@@ -702,7 +702,7 @@ textarea.input-field {
 .photo-upload-btn {
   display: inline-block;
   padding: 8px 16px;
-  background: rgba(61, 52, 48, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-secondary);
@@ -795,8 +795,8 @@ textarea.input-field {
 }
 
 .book-detail-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   border-radius: 16px;
   padding: 28px;
   margin-bottom: 16px;
@@ -850,8 +850,8 @@ textarea.input-field {
 }
 
 .book-uploader-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   border-radius: 16px;
   padding: 20px 28px;
   display: flex;
@@ -931,7 +931,7 @@ textarea.input-field {
   width: 70px;
   height: 90px;
   border-radius: 6px;
-  background: rgba(61, 52, 48, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 2px dashed var(--border);
   display: flex;
   align-items: center;
@@ -946,8 +946,8 @@ textarea.input-field {
   object-fit: contain;
   border-radius: 16px;
   margin-bottom: 24px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
 }
 
 /* =============================
@@ -967,8 +967,8 @@ textarea.input-field {
 .verify-email-container {
   width: 100%;
   max-width: 440px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   border-radius: 20px;
   padding: 40px 36px;
   text-align: center;
